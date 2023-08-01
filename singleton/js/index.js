@@ -1,4 +1,5 @@
 class WeekDays {
+
     constructor (day) {
         if (WeekDays.instance) {
             console.log("YA EXISTE");
