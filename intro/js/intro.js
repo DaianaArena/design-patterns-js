@@ -108,5 +108,5 @@ class Beer extends Drink {
     }
 }
 
-const erdinger = new Beer("budweiser", 4.8)
+const budweiser = new Beer("budweiser", 4.8)
 console.log(erdinger.info());
