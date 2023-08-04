@@ -1,55 +1,58 @@
 class Subject {
 
-    
-
     constructor () {
-        this.observers = []    
-    }
-
-    notify(data){
-
-        refresh(data)
+        this.observers = []
     }
 
     suscribe(observer){
-        this.observers = this.observers.push(observer)
-
+        this.observers.push(observer)
     }
 
     unsuscribe(observer){
         this.observers = this.observers.filter((suscriber) => suscriber !== observer )
     }
+
+    notify(data){
+        this.observers.forEach(observer => {
+            observer.refresh(data)
+        })
+    }
+
+
+}
+
+class ItemsSubject extends Subject {
+
+    constructor(){
+        super();
+        this.data = [];
+    }
+
+    add(item) {
+        this.data.push(item);
+        this.notify(item);
+    }
 }
 
 class Observer {
 
-    
-
-    constructor (elements) {
-        this.elements = []    
+    constructor (element) {
+        this.element = element
     }
-
 
     refresh(data){
-        add(data)
+        this.element.innerHTML += `<p>
+            ${data}
+            </p>`
     }
 }
 
-function add(data) {
-    data.array.forEach(element => {
-        div1.innerHTML += `<p>
-    ${element}
-    </p>` 
-    });
-    
-    
+const item = new ItemsSubject();
+const div1Observer = new Observer(div1);
+console.log(div1Observer);
+item.suscribe(div1Observer);
+
+
+function getValue() {
+    item.add(txtName.value);
 }
-
-const subj = new Subject();
-const obs1 = new Observer(div1);
-subj.suscribe(obs1 );
-//txtName.value
-subj.refresh();
-
-
-
