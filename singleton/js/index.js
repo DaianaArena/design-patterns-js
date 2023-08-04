@@ -1,20 +1,47 @@
-class WeekDays {
+class Logger {
 
-    constructor (day) {
-        if (WeekDays.instance) {
-            console.log("YA EXISTE");
-            return WeekDays.instance; // Singleton pattern implementation to avoid creating multiple instances of the class and
+    /**
+     * Here, the Singleton Design Pattern is exemplified with a Logger class.
+     * Naturally, if we were interested in logging our application or project,
+     * we would have many different files from various places in our project
+     * sending info to a Logger Object. This Logger should always be THE SAME Object,
+     * the only instance of the Logger class. We can ensure this with a Singleton.
+     */ 
+
+    constructor() {
+        if (Logger.instance) {
+            console.log("Logger already exists");
+            return Logger.instance;
         }
-        console.log(("NO EXISTE Y SE CREA"));
-        this.day = day
-        // instance no es una palabra reservada sino un atributo de la Clase
-        // que guarda la instancia de WeekDays, y la cual usaremos para validar
-        // si ya existe o no una instancia de la Clase/Singleton
-        WeekDays.instance = this;
+        console.log(("Creating Logger..."));
+
+        this.logs = [];
+        Logger.instance = this;
+    }
+
+    log(data) {
+        console.log("Logging: " + data);
+        this.logs.push(data);
+    }
+
+    size() {
+        return this.logs.length;
     }
 }
 
-let today = new WeekDays('Lunes')
-console.log(today)
-let today2 = new WeekDays('Martes')
-console.log(today2)
+// Let's say we call the Logger on some file from our project:
+let the_logger = new Logger();
+the_logger.log('FIRST LOG');
+
+// And then, on a different file, we also want to use the Logger:
+let another_logger = new Logger();
+another_logger.log('SECOND LOG');
+
+// Then, a third file wants to know the size of the Logger
+let third_logger = new Logger();
+console.log(third_logger.size());
+/**
+ * This third file had nothing to do with the previous two,
+ * but it can access the logs they generated because the Logger object
+ * is always the same, thanks to the Singleton Design Pattern.
+ */
