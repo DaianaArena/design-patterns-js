@@ -37,9 +37,9 @@ the_logger.log('FIRST LOG');
 let another_logger = new Logger();
 another_logger.log('SECOND LOG');
 
-// Then, a third file wants to know the size of the Logger
-let third_logger = new Logger();
-console.log(third_logger.size());
+//Then, the second logger also want to know the size:
+console.log(another_logger.size());
+
 /**
  * This third file had nothing to do with the previous two,
  * but it can access the logs they generated because the Logger object
