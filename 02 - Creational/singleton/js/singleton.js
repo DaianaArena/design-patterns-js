@@ -19,13 +19,25 @@ class Logger {
         Logger.instance = this;
     }
 
+    // The log function stores its input in the logs array 
     log(data) {
         console.log("Logging: " + data);
         this.logs.push(data);
     }
 
+    // The size function returns the current size of the logs array
     size() {
         return this.logs.length;
+    }
+
+    // The get function returns the #index element from the logs array
+    get(index) {
+        return this.logs[index];
+    }
+
+    // The show function prints all logs into the console
+    show() {
+        this.logs.forEach(log => console.log(log))
     }
 }
 
@@ -37,11 +49,12 @@ the_logger.log('FIRST LOG');
 let another_logger = new Logger();
 another_logger.log('SECOND LOG');
 
-//Then, the second logger also want to know the size:
-console.log(another_logger.size());
+//Then, the second logger can check the amount of logs a:
+console.log("LOG COUNT: " + another_logger.size());
+another_logger.show();
 
 /**
- * This third file had nothing to do with the previous two,
+ * This second file had nothing to do with the previous one,
  * but it can access the logs they generated because the Logger object
  * is always the same, thanks to the Singleton Design Pattern.
  */
