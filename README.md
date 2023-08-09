@@ -31,6 +31,7 @@ The repository is organized into different directories, each representing a cate
 - Creational Patterns: These patterns focus on object creation mechanisms, providing flexibility in creating objects in a way that suits your needs.
 - Structural Patterns: Structural patterns deal with object composition and relationships between objects, aiming to form larger structures from individual parts.
 - Behavioral Patterns: These patterns define the communication between objects and how they collaborate, enhancing the interaction between various components.
+- Architectural Patterns: Architectural patterns offer guidance on organizing the overall structure of your application, making it more scalable and maintainable.
 
 
 ## Before Installation - System Requirements
