@@ -6,6 +6,10 @@
 
 ## About the Pattern:
 
+## Purpose and Benefits:
+
+## Use Cases:
+
 
 
 ## Learn More
@@ -17,7 +21,9 @@ To learn more about Design Patterns:
 - [Udemy Course](https://www.udemy.com/course/patrones-de-diseno-en-javascript-y-typescript/) 
 
 
+We hope you find this section insightful and helpful in enhancing your JavaScript programming skills!
 
+Happy coding!
 
 
 
