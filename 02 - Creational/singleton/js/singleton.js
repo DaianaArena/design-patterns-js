@@ -30,11 +30,6 @@ class Logger {
         return this.logs.length;
     }
 
-    // The get function returns the #index element from the logs array
-    get(index) {
-        return this.logs[index];
-    }
-
     // The show function prints all logs into the console
     show() {
         this.logs.forEach(log => console.log(log))
