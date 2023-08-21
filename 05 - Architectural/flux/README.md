@@ -6,6 +6,18 @@
 
 ## About the Pattern:
 Flux is an architectural pattern used in building user interfaces, particularly in the context of web applications. It was developed by Facebook to address the challenges of managing the state and data flow in large and complex applications. Flux enforces a unidirectional data flow, making it easier to reason about how data changes and how those changes propagate through the application.
+
+Four major components of Flux:
+
+- Dispatcher: It coordinates actions and updates to stores.
+- Stores: It serves as a container for the app state and logic
+- Actions: It enables data passing to the dispatcher
+- Views: It is the same as the view in MVC architecture but in the context of React components.
+
+With simple words if we understand the whole then in Flux architecture basically suppose a user clicked on something, the view creates actions; Actions creates a new data and send it to the dispatcher, here comes the work of the dispatcher, the dispatcher dispatches the action results to the appropriate store. Then the store updates the state that is based upon the result and sends an update to the view.
+
+Data in a flux application flows in a single direction, or we can say that data in a flux flow in a unidirectional flow, the significance of unidirectional flow is that since the data flows through your application in a single direction we can have better control over it.
+
 ## Purpose and Benefits:
 The main purpose of the Flux pattern is to provide a clear and structured way to manage the state of an application, especially when dealing with complex user interfaces. It addresses the following challenges:
 
@@ -37,9 +49,9 @@ In these scenarios, Flux's strict unidirectional data flow and clear separation 
 
 ### You can access the course here
 
-To learn more about Design Patterns:
+To learn more about Flux:
 
-- [Udemy Course](https://www.udemy.com/course/patrones-de-diseno-en-javascript-y-typescript/) 
+- [Digital Ocean](https://www.digitalocean.com/community/tutorials/getting-to-know-flux-the-react-js-architecture) 
 
 
 We hope you find this section insightful and helpful in enhancing your JavaScript programming skills!
